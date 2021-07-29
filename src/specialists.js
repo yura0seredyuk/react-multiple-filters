@@ -175,7 +175,7 @@ const specialists = [
     experience: '3 года',
     price: '1 000 ₴',
     townLocation: 'Львів',
-    format: 'Онлайн / Офлайн',
+    format: 'Офлайн',
     lang: 'Русский',
     gender: 'Мужской',
     tel: '+380777777777',

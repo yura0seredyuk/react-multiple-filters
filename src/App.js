@@ -9,9 +9,16 @@ const filters = [
       id: 'townLocation',
       untitled: 'Город',
       placeholder: 'Город',
-      filters: ['Киев', 'Харків', 'Львів', 'Одеса'],
+      filters: ['Киев', 'Львів'],
       open: false
-  }
+  },
+  {
+    id: 'format',
+    untitled: 'Формат работы',
+    placeholder: 'Формат работы',
+    filters: ['Онлайн / Офлайн', 'Онлайн', 'Офлайн'],
+    open: false
+  },
 ];
 
 export default function App() {
@@ -65,7 +72,24 @@ export default function App() {
 
     const filterWithNormalKey = {};
 
-    filters.map((filter, i) => filterWithNormalKey[filter.id] = filter.filters);
+    filters.map((filter, i) => filterWithNormalKey[filter.id] = activeFilters[i]);
+
+
+    function filter(array = [], filters = {}) {
+        const keys = Object.keys(filters).filter(key => filters.hasOwnProperty(key));
+        
+        console.log(keys);
+
+        return array.filter(elem => {
+            const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
+
+            console.log('commonKeys', commonKeys);
+
+            return commonKeys.reduce((flag, key) => filters[key].includes(elem[key]));
+        });
+    }
+
+    const filteredSpecialists = filter(specialists, filterWithNormalKey);
 
   return (
     <div>
@@ -77,9 +101,11 @@ export default function App() {
         handleSelectFilter={handleSelectFilter}
       />
 
-      {specialists.map(specialist => (
+      {filteredSpecialists.map(specialist => (
         <div className='container' key={specialist.id}>
-            {console.log(filterWithNormalKey)}
+            {console.log('filterWithNormalKey', filterWithNormalKey)}
+            {console.log('activeFilters', activeFilters)}
+            {console.log('filterdSpecialist:', filteredSpecialists)}
             <PsychologistCard data={specialist}/>
         </div>
       ))}
