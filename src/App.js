@@ -6,59 +6,10 @@ import PsychologistCard from './PsychologistCard';
 
 const filters = [
   {
-      id: 'town',
+      id: 'townLocation',
       untitled: 'Город',
       placeholder: 'Город',
-      filters: ['Київ', 'Харків', 'Львів', 'Одеса'],
-      open: false
-  },
-  {
-      id: 'district',
-      untitled: 'Район',
-      placeholder: 'Район',
-      filters: [],
-      open: false
-  },
-  {
-      id: 'workFormat',
-      untitled: 'Формат работы',
-      placeholder: 'Формат работы',
-      filters: ['Онлайн / Офлайн', 'Онлайн', 'Офлайн'],
-      open: false
-  },
-  {
-      id: 'lang',
-      untitled: 'Язык',
-      placeholder: 'Язык',
-      filters: ['Русский', 'Український'],
-      open: false
-  },
-  {
-      id: 'workWith',
-      untitled: 'С кем работает',
-      placeholder: 'С кем работает',
-      filters: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
-      open: false
-  },
-  {
-      id: 'helpWith',
-      untitled: 'С чем помогает',
-      placeholder: 'С чем помогает',
-      filters: ['Депрессивные состояния', 'Расстройства пищевого поведения', 'Карьера, профессиональный рост', 'Поиск себя'],
-      open: false
-  },
-  {
-      id: 'workMethods',
-      untitled: 'Методы работы',
-      placeholder: 'Методы работы',
-      filters: ['Стандартні'],
-      open: false
-  },
-  {
-      id: 'gender',
-      untitled: 'Пол',
-      placeholder: 'Пол',
-      filters: ['Мужчина ', 'Женщина ', 'Пол не важен'],
+      filters: ['Киев', 'Харків', 'Львів', 'Одеса'],
       open: false
   }
 ];
@@ -112,6 +63,10 @@ export default function App() {
         setActiveFilters(newState);
     };
 
+    const filterWithNormalKey = {};
+
+    filters.map((filter, i) => filterWithNormalKey[filter.id] = filter.filters);
+
   return (
     <div>
       <PsychologistsCatalogFilters
@@ -124,6 +79,7 @@ export default function App() {
 
       {specialists.map(specialist => (
         <div className='container' key={specialist.id}>
+            {console.log(filterWithNormalKey)}
             <PsychologistCard data={specialist}/>
         </div>
       ))}
