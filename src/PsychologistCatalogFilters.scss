@@ -1,0 +1,141 @@
+.filter {
+  position: relative;
+  padding-bottom: 20px;
+
+  @media (max-width: 1000px) {
+    padding-bottom: 8px;
+  }
+}
+
+.openFilter {
+  max-height: 61px;
+  overflow-y: scroll;
+  /* overflow-x: hidden; */
+  width: 282px;
+}
+
+
+.untitled {
+  padding-bottom: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: black;
+
+@media (max-width: 1000px) {
+  display: none;
+}
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 282px;
+  height: 37px;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+
+  @media (max-width: 1000px) {
+    border: none;
+    border-bottom: 1px solid black;
+    height: 28px;
+  }
+
+  @media (max-width: 359px) {
+    width: calc(100vw - 40px);
+  }
+}
+
+.placeholder {
+  padding-left: 7px;
+  font-size: 13px;
+  line-height: 16px;
+  color: blackAlfaAnother;
+  opacity: 0.4;
+
+  @media (max-width: 1000px) {
+    font-size: 14px;
+    line-height: 19px;
+    color: black;
+    opacity: 1;
+  }
+}
+
+.downVector {
+  position: absolute;
+  bottom: 50%;
+  right: 7px;
+  transform: translate(0, 50%);
+}
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+.filterItem {
+  border: 1px solid black;
+  border-left: none;
+  padding: 5px 0;
+
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: blackAlfaAnother;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+     background-color: white;
+     color: red;
+   }
+}
+
+.filterItemActive {
+  background-color: black;
+  color: black;
+}
+
+.rangeContainer {
+  @media (max-width: 1000px) {
+    margin-top: 16px;
+  }
+}
+
+.range {
+  position: relative;
+  padding: 20px 0 50px;
+  /*width: calc(100% - 10px);*/
+}
+
+.rangeInfo {
+  position: absolute;
+  display: flex;
+  top: -10px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @media (max-width: 1000px) {
+    width: calc(100% - 14px);
+  }
+}
+
+.rangeType {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: black;
+}
+
+.rangeNumber {
+  font-size: 14px;
+  line-height: 24px;
+  color: black;
+}
+
+.checkbox {
+  padding-right: 7px;
+}
