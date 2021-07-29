@@ -1,0 +1,121 @@
+.root {
+  width: 290px;
+  height: 446px;
+  background: white;
+  border: 1px solid blue;
+  border-radius: 20px;
+  text-align: center;
+
+  @media (max-width: 359px) {
+    width: calc(100vw - 60px);
+  }
+}
+
+.userPhoto {
+  margin: 10px auto 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-family: NunitoSansExtraBold, Arial, sans-serif;
+  text-align: center;
+  font-size: 21px;
+  /*line-height: 29px;*/
+  color: black;
+}
+
+.mainInfo {
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.infoText {
+  font-family: NunitoSansExtraBold, Arial, sans-serif;
+  font-size: 16px;
+  /*line-height: 22px;*/
+  color: blue;
+  padding: 0 5px;
+}
+
+.line {
+  width: calc(100% - 30px);
+  height: 1px;
+  background: blue;
+  margin: auto;
+}
+
+.additionalInfoContainer {
+  width: fit-content;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.additionalInfo {
+  display: flex;
+  padding-bottom: 15px;
+}
+
+.detail {
+  text-align: initial;
+  width: 80px;
+  color: black;
+}
+
+.detailInfo {
+  color: black;
+}
+
+.detail,
+.detailInfo {
+  font-family: LatoRegular, Arial, sans-serif;
+  font-size: 13px;
+  /*line-height: 21px;*/
+  letter-spacing: 0.44px;
+}
+
+.detailsButton {
+  padding-top: 5px;
+  background-color: transparent;
+  border: none;
+  font-family: NunitoSansSemiBold, Arial, sans-serif;
+  font-size: 14px;
+  /*line-height: 19px;*/
+  text-align: center;
+  letter-spacing: 0.75px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  color: black;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  padding-top: 10px;
+  width: fit-content;
+  margin: auto;
+
+  @media (max-width: 359px) {
+    width: auto;
+  }
+}
+
+.button {
+  width: 260px;
+  height: 44px;
+  background: pink;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  font-family: NunitoSansBold, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  color: white;
+
+  @media (max-width: 359px) {
+    width: calc(100% - 30px);
+  }
+}

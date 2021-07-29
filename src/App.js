@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import specialists from './specialists.js';
 import PsychologistsCatalogFilters from './PsychologistsCatalogFilters.jsx';
+import PsychologistCard from './PsychologistCard';
 
 const filters = [
   {
@@ -120,6 +121,12 @@ export default function App() {
         filtersOpen={filtersOpen}
         handleSelectFilter={handleSelectFilter}
       />
+
+      {specialists.map(specialist => (
+        <div className='container' key={specialist.id}>
+            <PsychologistCard data={specialist}/>
+        </div>
+      ))}
     </div>
   );
 }
