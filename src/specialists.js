@@ -35,7 +35,7 @@ const specialists = [
         info: 'Печерский район'
       }
     ],
-    workWith: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
+    helpWith:'Депрессивные состояния',
     workWithTexts: [
       {
         workWith: {
@@ -80,6 +80,7 @@ const specialists = [
         }
       }
     ],
+    workWith: 'Работает с детьми',
     workWithAnother: [
       {
         img: '/src/apps/client/ui/pages/PsychologistBio/images/smile.png',
@@ -109,6 +110,7 @@ const specialists = [
         }
       }
     ],
+    workMethods: 'Стандартні',
     about: [
       {
         id: 'bio',
@@ -205,7 +207,7 @@ const specialists = [
         info: 'Печерский район'
       }
     ],
-    workWith: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
+    helpWith: 'Расстройства пищевого поведения',
     workWithTexts: [
       {
         workWith: {
@@ -250,6 +252,7 @@ const specialists = [
         }
       }
     ],
+    workWith: 'Работает с детьми',
     workWithAnother: [
       {
         img: '/src/apps/client/ui/pages/PsychologistBio/images/smile.png',
@@ -279,6 +282,7 @@ const specialists = [
         }
       }
     ],
+    workMethods: 'Стандартні',
     about: [
       {
         id: 'bio',

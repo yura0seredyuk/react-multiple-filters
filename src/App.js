@@ -41,6 +41,20 @@ const filters = [
     open: false
   },
   {
+    id: 'helpWith',
+    untitled: 'С чем помогает',
+    placeholder: 'С чем помогает',
+    filters: ['Депрессивные состояния', 'Расстройства пищевого поведения', 'Карьера, профессиональный рост', 'Поиск себя'],
+    open: false
+  },
+  {
+    id: 'workMethods',
+    untitled: 'Методы работы',
+    placeholder: 'Методы работы',
+    filters: ['Стандартні'],
+    open: false
+  },
+  {
     id: 'gender',
     untitled: 'Пол',
     placeholder: 'Пол',
@@ -110,7 +124,7 @@ export default function App() {
             const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
             // console.log(commonKeys);
 
-            return commonKeys.reduce((flag, key) => (flag && typeof elem[key] === 'object' ? console.log(filters[key].filter(e => elem[key].includes(e))) : filters[key].includes(elem[key])), 1);
+            return commonKeys.reduce((flag, key) => (flag && filters[key].includes(elem[key])), 1);
         });
     }
 
