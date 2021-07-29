@@ -7,6 +7,7 @@ const specialists = [
     experience: '3 года',
     price: '1 000 ₴',
     townLocation: 'Киев',
+    district: undefined,
     format: 'Онлайн / Офлайн',
     lang: 'Русский',
     gender: 'Женский',
@@ -34,6 +35,7 @@ const specialists = [
         info: 'Печерский район'
       }
     ],
+    workWith: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
     workWithTexts: [
       {
         workWith: {
@@ -175,8 +177,9 @@ const specialists = [
     experience: '3 года',
     price: '1 000 ₴',
     townLocation: 'Львів',
+    district: undefined,
     format: 'Офлайн',
-    lang: 'Русский',
+    lang: 'Український',
     gender: 'Мужской',
     tel: '+380777777777',
     mail: 'aandrew@exemple.com',

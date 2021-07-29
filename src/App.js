@@ -13,12 +13,40 @@ const filters = [
       open: false
   },
   {
+    id: 'district',
+    untitled: 'Район',
+    placeholder: 'Район',
+    filters: [undefined],
+    open: false
+  },
+  {
     id: 'format',
     untitled: 'Формат работы',
     placeholder: 'Формат работы',
     filters: ['Онлайн / Офлайн', 'Онлайн', 'Офлайн'],
     open: false
   },
+  {
+    id: 'lang',
+    untitled: 'Язык',
+    placeholder: 'Язык',
+    filters: ['Русский', 'Український'],
+    open: false
+  },
+  {
+    id: 'workWith',
+    untitled: 'С кем работает',
+    placeholder: 'С кем работает',
+    filters: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
+    open: false
+  },
+  {
+    id: 'gender',
+    untitled: 'Пол',
+    placeholder: 'Пол',
+    filters: ['Мужской', 'Женский', 'Пол не важен'],
+    open: false
+  }
 ];
 
 export default function App() {
@@ -77,15 +105,11 @@ export default function App() {
 
     function filter(array = [], filters = {}) {
         const keys = Object.keys(filters).filter(key => filters.hasOwnProperty(key));
-        
-        console.log(keys);
 
         return array.filter(elem => {
             const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
 
-            console.log('commonKeys', commonKeys);
-
-            return commonKeys.reduce((flag, key) => filters[key].includes(elem[key]));
+            return commonKeys.reduce((flag, key) => (flag && filters[key].includes(elem[key])), true);
         });
     }
 
