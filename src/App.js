@@ -12,13 +12,13 @@ const filters = [
       filters: ['Киев', 'Львів'],
       open: false
   },
-  {
-    id: 'district',
-    untitled: 'Район',
-    placeholder: 'Район',
-    filters: [undefined],
-    open: false
-  },
+//   {
+//     id: 'district',
+//     untitled: 'Район',
+//     placeholder: 'Район',
+//     filters: [undefined],
+//     open: false
+//   },
   {
     id: 'format',
     untitled: 'Формат работы',
@@ -33,13 +33,13 @@ const filters = [
     filters: ['Русский', 'Український'],
     open: false
   },
-  {
-    id: 'workWith',
-    untitled: 'С кем работает',
-    placeholder: 'С кем работает',
-    filters: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
-    open: false
-  },
+//   {
+//     id: 'workWith',
+//     untitled: 'С кем работает',
+//     placeholder: 'С кем работает',
+//     filters: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
+//     open: false
+//   },
   {
     id: 'gender',
     untitled: 'Пол',
@@ -108,8 +108,9 @@ export default function App() {
 
         return array.filter(elem => {
             const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
+            // console.log(commonKeys);
 
-            return commonKeys.reduce((flag, key) => (flag && filters[key].includes(elem[key])), true);
+            return commonKeys.reduce((flag, key) => (flag && filters[key].includes(elem[key])), 1);
         });
     }
 
