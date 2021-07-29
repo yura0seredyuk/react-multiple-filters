@@ -205,6 +205,7 @@ const specialists = [
         info: 'Печерский район'
       }
     ],
+    workWith: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
     workWithTexts: [
       {
         workWith: {

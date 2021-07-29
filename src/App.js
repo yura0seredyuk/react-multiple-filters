@@ -33,13 +33,13 @@ const filters = [
     filters: ['Русский', 'Український'],
     open: false
   },
-//   {
-//     id: 'workWith',
-//     untitled: 'С кем работает',
-//     placeholder: 'С кем работает',
-//     filters: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
-//     open: false
-//   },
+  {
+    id: 'workWith',
+    untitled: 'С кем работает',
+    placeholder: 'С кем работает',
+    filters: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
+    open: false
+  },
   {
     id: 'gender',
     untitled: 'Пол',
@@ -110,7 +110,7 @@ export default function App() {
             const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
             // console.log(commonKeys);
 
-            return commonKeys.reduce((flag, key) => (flag && filters[key].includes(elem[key])), 1);
+            return commonKeys.reduce((flag, key) => (flag && typeof elem[key] === 'object' ? console.log(filters[key].filter(e => elem[key].includes(e))) : filters[key].includes(elem[key])), 1);
         });
     }
 
