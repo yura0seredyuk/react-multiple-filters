@@ -5,7 +5,7 @@ const specialists = [
     name: 'Анна Петрова',
     profession: 'Психолог',
     experience: '3 года',
-    price: '1 000 ₴',
+    price: 1000,
     townLocation: 'Киев',
     district: 'town',
     format: 'Онлайн / Офлайн',
@@ -13,6 +13,7 @@ const specialists = [
     gender: 'Женский',
     tel: '+380777777777',
     mail: 'aandrew@exemple.com',
+    age: 31,
     info: [
       {
         img: '/src/apps/client/ui/pages/PsychologistBio/images/userIcon.png',
@@ -177,7 +178,7 @@ const specialists = [
     name: 'Иван Иванов',
     profession: 'Психолог',
     experience: '3 года',
-    price: '1 000 ₴',
+    price: 1500,
     townLocation: 'Львів',
     district: 'town',
     format: 'Офлайн',
@@ -185,6 +186,7 @@ const specialists = [
     gender: 'Мужской',
     tel: '+380777777777',
     mail: 'aandrew@exemple.com',
+    age: 29,
     info: [
       {
         img: '/src/apps/client/ui/pages/PsychologistBio/images/userIcon.png',
