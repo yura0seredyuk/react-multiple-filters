@@ -7,7 +7,7 @@ const specialists = [
     experience: '3 года',
     price: '1 000 ₴',
     townLocation: 'Киев',
-    district: undefined,
+    district: 'town',
     format: 'Онлайн / Офлайн',
     lang: 'Русский',
     gender: 'Женский',
@@ -35,7 +35,7 @@ const specialists = [
         info: 'Печерский район'
       }
     ],
-    helpWith:'Депрессивные состояния',
+    helpWith: ['Депрессивные состояния', 'Расстройства пищевого поведения', 'Карьера, профессиональный рост', 'Поиск себя'],
     workWithTexts: [
       {
         workWith: {
@@ -80,7 +80,7 @@ const specialists = [
         }
       }
     ],
-    workWith: 'Работает с детьми',
+    workWith: ['Индивидуальные сессии'],
     workWithAnother: [
       {
         img: '/src/apps/client/ui/pages/PsychologistBio/images/smile.png',
@@ -110,7 +110,7 @@ const specialists = [
         }
       }
     ],
-    workMethods: 'Стандартні',
+    workMethods: ['Стандартні'],
     about: [
       {
         id: 'bio',
@@ -179,7 +179,7 @@ const specialists = [
     experience: '3 года',
     price: '1 000 ₴',
     townLocation: 'Львів',
-    district: undefined,
+    district: 'town',
     format: 'Офлайн',
     lang: 'Український',
     gender: 'Мужской',
@@ -207,7 +207,7 @@ const specialists = [
         info: 'Печерский район'
       }
     ],
-    helpWith: 'Расстройства пищевого поведения',
+    helpWith: ['Депрессивные состояния', 'Расстройства пищевого поведения', 'Карьера, профессиональный рост'],
     workWithTexts: [
       {
         workWith: {
@@ -252,7 +252,7 @@ const specialists = [
         }
       }
     ],
-    workWith: 'Работает с детьми',
+    workWith: ['Работает с детьми', 'Работает с парами', 'Индивидуальные сессии'],
     workWithAnother: [
       {
         img: '/src/apps/client/ui/pages/PsychologistBio/images/smile.png',
@@ -282,7 +282,7 @@ const specialists = [
         }
       }
     ],
-    workMethods: 'Стандартні',
+    workMethods: ['Стандартні'],
     about: [
       {
         id: 'bio',

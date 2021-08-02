@@ -12,13 +12,13 @@ const filters = [
       filters: ['Киев', 'Львів'],
       open: false
   },
-//   {
-//     id: 'district',
-//     untitled: 'Район',
-//     placeholder: 'Район',
-//     filters: [undefined],
-//     open: false
-//   },
+  {
+    id: 'district',
+    untitled: 'Район',
+    placeholder: 'Район',
+    filters: ['town'],
+    open: false
+  },
   {
     id: 'format',
     untitled: 'Формат работы',
@@ -118,15 +118,15 @@ export default function App() {
 
 
     function filter(array = [], filters = {}) {
-        const keys = Object.keys(filters).filter(key => filters.hasOwnProperty(key));
-
-        return array.filter(elem => {
-            const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
-            // console.log(commonKeys);
-
-            return commonKeys.reduce((flag, key) => (flag && filters[key].includes(elem[key])), 1);
-        });
-    }
+      const keys = Object.keys(filters).filter(key => filters.hasOwnProperty(key));
+      return array.filter(elem => {
+          const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
+          return commonKeys.reduce((flag, key) => { 
+            const isFilter = typeof elem[key] !== 'string' ? elem[key].some(item => filters[key].includes(item)) : filters[key].includes(elem[key])
+            return (flag && isFilter);
+          } , 1);
+      });
+  }
 
     const filteredSpecialists = filter(specialists, filterWithNormalKey);
 
