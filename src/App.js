@@ -64,6 +64,8 @@ const filters = [
 ];
 
 export default function App() {
+  const [rangeValueAge, setRangeValueAge] = useState({ value: { min: 25, max: 45 } });
+  const [rangeValuePrice, setRangeValuePrice] = useState({ value: { min: 100, max: 1000 } });
 
   const defaultStateForOpenFilters = {};
   filters.map((filter, i) => { defaultStateForOpenFilters[i] = filter.open; });
@@ -138,6 +140,11 @@ export default function App() {
         defaultFilters={defaultFilters}
         filtersOpen={filtersOpen}
         handleSelectFilter={handleSelectFilter}
+        handleCloseOpenFilter={handleCloseOpenFilter}
+        rangeValueAge={rangeValueAge}
+        setRangeValueAge={setRangeValueAge}
+        rangeValuePrice={rangeValuePrice}
+        setRangeValuePrice={setRangeValuePrice}
       />
 
       {filteredSpecialists.map(specialist => (

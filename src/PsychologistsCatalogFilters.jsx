@@ -1,5 +1,6 @@
 import React from 'react';
 import './PsychologistCatalogFilters.scss';
+import Range from './Range';
 
 const PsychologistCatalogFilters = (
     {
@@ -7,7 +8,12 @@ const PsychologistCatalogFilters = (
         handleSelectOpenFilter,
         defaultFilters,
         filtersOpen,
-        handleSelectFilter
+        handleSelectFilter,
+        handleCloseOpenFilter,
+        rangeValueAge,
+        setRangeValueAge,
+        rangeValuePrice,
+        setRangeValuePrice
     }) => {
     return (
         <>
@@ -40,6 +46,32 @@ const PsychologistCatalogFilters = (
                     )}
                 </div>
             ))}
+
+            <div className='rangeContainer'>
+                <div
+                    className='range'
+                    onMouseDown={() => handleCloseOpenFilter()}
+                >
+                    <div className='rangeInfo'>
+                        <div className='rangeType'>Возраст</div>
+                        <div className='rangeNumber'>{`${rangeValueAge.value.min} - ${rangeValueAge.value.max}`}</div>
+                    </div>
+
+                    <Range rangeValue={rangeValueAge} setRangeValue={setRangeValueAge} minValue={18} maxValue={70}/>
+                </div>
+
+                <div
+                    className='range'
+                    onMouseDown={() => handleCloseOpenFilter()}
+                >
+                    <div className='rangeInfo'>
+                        <div className='rangeType'>Цена</div>
+                        <div className='rangeNumber'>{`${rangeValuePrice.value.min} - ${rangeValuePrice.value.max}`}</div>
+                    </div>
+
+                    <Range rangeValue={rangeValuePrice} setRangeValue={setRangeValuePrice} minValue={0} maxValue={2000}/>
+                </div>
+            </div>
         </>
     );
 };
