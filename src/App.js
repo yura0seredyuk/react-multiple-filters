@@ -65,7 +65,7 @@ const filters = [
 
 export default function App() {
   const [rangeValueAge, setRangeValueAge] = useState({ value: { min: 18, max: 30 } });
-  const [rangeValuePrice, setRangeValuePrice] = useState({ value: { min: 0, max: 999 } });
+  const [rangeValuePrice, setRangeValuePrice] = useState({ value: { min: 0, max: 2000 } });
 
   const defaultStateForOpenFilters = {};
   filters.map((filter, i) => { defaultStateForOpenFilters[i] = filter.open; });
@@ -154,7 +154,7 @@ export default function App() {
             {/* {console.log('filterWithNormalKey', filterWithNormalKey)}
             {console.log('activeFilters', activeFilters)}
             {console.log('filterdSpecialist:', filteredSpecialists)} */}
-            {console.log(filteredSpecialistWithRange)}
+            {/* {console.log(filteredSpecialistWithRange)} */}
             <PsychologistCard data={specialist}/>
         </div>
       ))}

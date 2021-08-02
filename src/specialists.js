@@ -13,7 +13,7 @@ const specialists = [
     gender: 'Женский',
     tel: '+380777777777',
     mail: 'aandrew@exemple.com',
-    age: 31,
+    age: 30,
     info: [
       {
         img: '/src/apps/client/ui/pages/PsychologistBio/images/userIcon.png',
