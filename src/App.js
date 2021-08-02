@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import specialists from './specialists.js';
 import PsychologistsCatalogFilters from './PsychologistsCatalogFilters.jsx';
@@ -64,7 +64,7 @@ const filters = [
 ];
 
 export default function App() {
-  const [rangeValueAge, setRangeValueAge] = useState({ value: { min: 18, max: 30 } });
+  const [rangeValueAge, setRangeValueAge] = useState({ value: { min: 18, max: 70 } });
   const [rangeValuePrice, setRangeValuePrice] = useState({ value: { min: 0, max: 2000 } });
 
   const defaultStateForOpenFilters = {};
@@ -119,12 +119,30 @@ export default function App() {
     filters.map((filter, i) => filterWithNormalKey[filter.id] = activeFilters[i]);
 
 
-    function filter(array = [], filters = {}) {
-      const keys = Object.keys(filters).filter(key => filters.hasOwnProperty(key));
+    function filter(array = [], filtersWithKeys = {}) {
+      const keys = Object.keys(filtersWithKeys).filter(key => filtersWithKeys.hasOwnProperty(key));
+      // {console.log(filtersWithKeys)}
+
       return array.filter(elem => {
           const commonKeys = keys.filter(key => elem.hasOwnProperty(key));
-          return commonKeys.reduce((flag, key) => { 
-            const isFilter = typeof elem[key] !== 'string' ? elem[key].some(item => filters[key].includes(item)) : filters[key].includes(elem[key])
+          return commonKeys.reduce((flag, key) => {
+            
+            if (filtersWithKeys[key].length === 0) {
+              const emptyFilter = filtersWithKeys[key];
+
+              // setDefaultFilters(defaultFilters[i] = [])
+              // emptyFilter.push()
+              filters.filter((elem, i) => {
+                elem.id === key && elem.filters.map(elem => emptyFilter.push(elem));
+                defaultFilters[i] = [];
+              });
+
+            }
+
+            // {console.log(defaultFilters)}
+            // {console.log(filtersWithKeys[key])}
+            
+            const isFilter = typeof elem[key] !== 'string' ? elem[key].some(item => filtersWithKeys[key].includes(item)) : filtersWithKeys[key].includes(elem[key])
             return (flag && isFilter);
           } , 1);
       });
@@ -151,9 +169,9 @@ export default function App() {
 
       {filteredSpecialistWithRange.map(specialist => (
         <div className='container' key={specialist.id}>
-            {/* {console.log('filterWithNormalKey', filterWithNormalKey)}
-            {console.log('activeFilters', activeFilters)}
-            {console.log('filterdSpecialist:', filteredSpecialists)} */}
+            {/* {console.log('filterWithNormalKey', filterWithNormalKey)} */}
+            {/* {console.log('activeFilters', activeFilters)} */}
+            {/* {console.log('filterdSpecialist:', filteredSpecialists)} */}
             {/* {console.log(filteredSpecialistWithRange)} */}
             <PsychologistCard data={specialist}/>
         </div>
